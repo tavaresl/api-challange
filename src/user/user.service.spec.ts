@@ -2,6 +2,9 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { HttpService, HttpModule } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserDTO } from './dto/user.dto';
+import { User } from './model/user';
+import { Address } from './model/address';
+import { Company } from './model/company';
 
 describe('UserService', () => {
   let http: HttpService;
@@ -46,6 +49,22 @@ describe('UserService', () => {
       toPromise: jest.fn(() => Promise.resolve({ data: [...result] })),
     }) as any);
 
-    expect(await service.getAll()).toEqual(result);
+    expect(await service.getAll()).toEqual([
+      new User(
+        'John Wick',
+        'john.wick@continental.com',
+        '1-463-123-4447',
+        'johnwick.movie',
+        new Address(
+          'Wall Street',
+          'Suite 733',
+          'New York',
+        ),
+        new Company(
+          'Continental Hotel',
+          'You have served. You will be of service.',
+        ),
+      ),
+    ]);
   });
 });
