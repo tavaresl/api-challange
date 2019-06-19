@@ -1,72 +1,64 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+# API Challange
 
-[travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
-[travis-url]: https://travis-ci.org/nestjs/nest
-[linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
-[linux-url]: https://travis-ci.org/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
-<a href="https://gitter.im/nestjs/nestjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/nestjs/nestjs.svg" alt="Gitter" /></a>
-<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
-  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Repositório contendo o código fonte do desafio de integração com a API de usuários https://jsonplaceholder.typicode.com/users.
 
-## Description
+## Rodando a aplicação com Node
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Para rodar a aplicação diretamente, é necessário ter o Node instalado. O processo de instalação do node pode ser encontrado [aqui](https://nodejs.org/en/download/).
 
-## Installation
+Após a instalação do node, basta rodar o comando
 
-```bash
-$ npm install
+```shell
+npm start
 ```
 
-## Running the app
+no Terminal/CMD/PowerShell e, em alguns momentos, a aplicação estará pronta para uso, acessível pela porta `3000`.
 
-```bash
-# development
-$ npm run start
+## Rodando a aplicação com Docker
 
-# watch mode
-$ npm run start:dev
+Para rodar a aplicação usando Docker, basta baixar a imagem do projeto direto do Docker Hub rodando o comando
 
-# production mode
-$ npm run start:prod
+```shell
+docker pull tavaresl1/api-challange
 ```
 
-## Test
+no Terminal/CMD/PowerShell.
 
-```bash
-# unit tests
-$ npm run test
+Caso deseje gerar a imagem docker da aplicação diretamente em sua máquina, basta rodar o comando
 
-# test coverage
-$ npm run test:cov
+```shell
+docker build -t tavaresl1/api-challange .
 ```
 
-## Support
+no Terminal/CMD/PowerShell.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Após a imagem estar disponível em sua máquina, basta rodar o comando
 
-## Stay in touch
+```shell
+docker run --name api-challange -p 3000:3000 -d --restart always tavaresl1/api-challange
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Rodando os testes
 
-## License
+Para rodar os testes unitários da aplicação, basta rodar o comando 
 
-  Nest is [MIT licensed](LICENSE).
+```shell
+npm test
+```
+
+no Terminal/CMD/PowerShell
+
+## Endpoints da aplicação
+
+A aplicação disponibiliza três endpoints, cada um referente a um item do desafio.
+
+São eles:
+
+- `GET: http://localhost:3000/user` <br>
+  O Nome, email e a empresa em que trabalha (em ordem alfabética).
+
+- `GET: http://localhost:3000/user/websites` <br>
+  Os websites de todos os usuários
+
+- `GET: http://localhost:3000/user/addresses/suites` <br>
+  Mostrar todos os usuários que no endereço contem a palavra ```suite```
