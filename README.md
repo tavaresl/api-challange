@@ -41,7 +41,7 @@ no Terminal/CMD/PowerShell.
 Após a imagem estar disponível em sua máquina, basta rodar o comando
 
 ```shell
-docker run --name api-challange -p 3000:3000 -d --restart always tavaresl1/api-challange
+docker run --name api-challange -p 8080:8080 -d --restart always tavaresl1/api-challange
 ```
 
 ## Rodando os testes
