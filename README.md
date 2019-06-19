@@ -12,7 +12,7 @@ Após a instalação do node, basta rodar o comando
 npm install
 ```
 
-no Terminal/CMD/PowerShell para instalar as **dependências do projeto** e, logo em seguida, o comando
+no Terminal/CMD/PowerShell, na raiz do projeto, para instalar as **dependências do projeto**. Logo em seguida, rode o comando
 
 ```shell
 npm start
