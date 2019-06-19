@@ -18,7 +18,7 @@ no Terminal/CMD/PowerShell, na raiz do projeto, para instalar as **dependências
 npm start
 ```
 
-Em alguns momentos, a aplicação estará pronta para uso, acessível pela porta `3000`.
+Em alguns momentos, a aplicação estará pronta para uso, acessível pela porta `8080`.
 
 ## Rodando a aplicação com Docker
 
