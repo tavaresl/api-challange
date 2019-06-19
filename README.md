@@ -60,11 +60,11 @@ A aplicação disponibiliza três endpoints, cada um referente a um item do desa
 
 São eles:
 
-- `GET: http://localhost:3000/user` <br>
+- `GET: http://localhost:8080/user` <br>
   O Nome, email e a empresa em que trabalha (em ordem alfabética).
 
-- `GET: http://localhost:3000/user/websites` <br>
+- `GET: http://localhost:8080/user/websites` <br>
   Os websites de todos os usuários
 
-- `GET: http://localhost:3000/user/addresses/suites` <br>
+- `GET: http://localhost:8080/user/addresses/suites` <br>
   Mostrar todos os usuários que no endereço contem a palavra ```suite```
