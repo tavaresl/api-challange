@@ -9,10 +9,16 @@ Para rodar a aplicação diretamente, é necessário ter o Node instalado. O pro
 Após a instalação do node, basta rodar o comando
 
 ```shell
+npm install
+```
+
+no Terminal/CMD/PowerShell para instalar as **dependências do projeto** e, logo em seguida, o comando
+
+```shell
 npm start
 ```
 
-no Terminal/CMD/PowerShell e, em alguns momentos, a aplicação estará pronta para uso, acessível pela porta `3000`.
+Em alguns momentos, a aplicação estará pronta para uso, acessível pela porta `3000`.
 
 ## Rodando a aplicação com Docker
 
